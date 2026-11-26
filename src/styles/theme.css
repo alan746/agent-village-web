@@ -1,0 +1,256 @@
+:root {
+  color-scheme: light;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --bg: #f3f2ee;
+  --surface: #fbfaf8;
+  --surface-2: #efede8;
+  --surface-3: #e6e3dc;
+  --border: #dcd8cf;
+  --border-strong: #c6c1b6;
+  --text: #1d2125;
+  --text-2: #4a5057;
+  --muted: #737981;
+  --focus: #2b62c4;
+  --danger: #b8372b;
+  --danger-soft: #f6e3df;
+  --ok: #2f7a4b;
+  --shadow: 0 1px 2px rgb(30 28 24 / 0.06), 0 2px 8px rgb(30 28 24 / 0.05);
+
+  --v0: #0e7a6b;
+  --v1: #a8670a;
+  --v2: #2f5fb0;
+  --v3: #8c4a9c;
+  --v4: #5d7a18;
+  --v5: #1d7a98;
+
+  --term-bg: #121518;
+  --term-border: #262b30;
+  --term-text: #d8dcdf;
+  --term-dim: #8b939b;
+  --term-prompt: #7fcdbd;
+  --term-stderr: #f0a093;
+  --term-failed: #e2685a;
+
+  --radius: 6px;
+  --radius-small: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #101214;
+    --surface: #171a1d;
+    --surface-2: #1d2124;
+    --surface-3: #252a2e;
+    --border: #2a2f34;
+    --border-strong: #3a4046;
+    --text: #e4e6e8;
+    --text-2: #b9bec3;
+    --muted: #8b929a;
+    --focus: #7aa5f0;
+    --danger: #f07a6c;
+    --danger-soft: #3a2220;
+    --ok: #6cc08a;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+    --v0: #3cb8a4;
+    --v1: #dea445;
+    --v2: #6f9bed;
+    --v3: #c18ad0;
+    --v4: #a2c25c;
+    --v5: #5bb5d4;
+    --term-bg: #0b0d0f;
+    --term-border: #22272b;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101214;
+  --surface: #171a1d;
+  --surface-2: #1d2124;
+  --surface-3: #252a2e;
+  --border: #2a2f34;
+  --border-strong: #3a4046;
+  --text: #e4e6e8;
+  --text-2: #b9bec3;
+  --muted: #8b929a;
+  --focus: #7aa5f0;
+  --danger: #f07a6c;
+  --danger-soft: #3a2220;
+  --ok: #6cc08a;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+  --v0: #3cb8a4;
+  --v1: #dea445;
+  --v2: #6f9bed;
+  --v3: #c18ad0;
+  --v4: #a2c25c;
+  --v5: #5bb5d4;
+  --term-bg: #0b0d0f;
+  --term-border: #22272b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+code,
+pre,
+.mono {
+  font-family: var(--font-mono);
+}
+
+code {
+  font-size: 0.93em;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 12px;
+}
+
+.is-failed-text {
+  color: var(--danger);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--text-2);
+  flex: none;
+}
+
+.icon-button:hover:not(:disabled) {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.link-button,
+.expand-button,
+.text-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-2);
+  font-size: 12px;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 2px;
+}
+
+.link-button:hover,
+.expand-button:hover,
+.text-button:hover {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
+
+.expand-button {
+  display: block;
+  margin-top: 4px;
+}
+
+.role-tag {
+  display: inline-block;
+  padding: 0 5px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 16px;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.panel-swatch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent, var(--muted));
+  flex: none;
+}
+
+.who {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
