@@ -1,0 +1,20 @@
+[
+  {
+    "round": 34,
+    "turn": 3,
+    "title": "deepseek reports a bug as fixed",
+    "note": "deepseek reports a bug in gemini's export code and says it has already fixed it."
+  },
+  {
+    "round": 35,
+    "turn": 2,
+    "title": "chatgpt checks the fix",
+    "note": "chatgpt compares the two versions and finds commit 6641a26 is a no-op for the reported bug."
+  },
+  {
+    "round": 36,
+    "turn": 1,
+    "title": "The leader closes the task",
+    "note": "The leader closes the task and asks for a failing-before repro on HEAD in future bug reports."
+  }
+]

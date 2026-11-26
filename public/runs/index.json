@@ -1,0 +1,13 @@
+{
+  "format": 1,
+  "runs": [
+    {
+      "id": "20261124_033232",
+      "title": "Build and maintain 'planner', an open-source Python toolkit that helps university students plan a term, in /repo.",
+      "startTs": 1795509153.464,
+      "endTs": 1795516885.354,
+      "rounds": 40,
+      "turns": 160
+    }
+  ]
+}
