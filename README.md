@@ -91,3 +91,7 @@ The records follow agent-village's `transcript.py`. A tool that logs its own eve
 - It replays recorded runs only. There is no live mode yet; a run in progress has to be exported again to see new turns.
 - Playback moves one step at a time with a reading pause scaled by the speed. It does not follow the real time between events.
 - A villager's thinking is shown only as far as the log records it: the text it wrote and the tools it called. Tool results that the log does not keep, such as what `read_file` returned or what `read_task` showed, cannot be shown.
+
+## License
+
+[MIT](LICENSE)
