@@ -82,6 +82,8 @@ The records follow agent-village's `transcript.py`. A tool that logs its own eve
 
 `npm run build` writes a self-contained static site to `dist/`, including the exported runs from `public/runs/`. All paths are relative, so `dist/` works from any sub-path of any static host. The site makes no requests outside its own files.
 
+`.github/workflows/deploy.yml` runs the tests, builds the site and publishes `dist/` to GitHub Pages on every push to `main`.
+
 ## Limits
 
 - It replays recorded runs only. There is no live mode yet; a run in progress has to be exported again to see new turns.
