@@ -2,7 +2,7 @@ import { memo, useMemo, type CSSProperties } from 'react'
 import { TASK_STATUS_LABELS, countByStatus, type Task } from '../state/taskBoard'
 import { accentVar } from '../state/village'
 import type { Manifest } from '../types'
-import { ClippedText } from './ClippedText'
+import { ClippedMarkdown } from './Markdown'
 
 interface TasksTabProps {
   manifest: Manifest
@@ -39,7 +39,7 @@ const TaskCard = memo(function TaskCard({
         </button>
         <span className={`task-status is-${task.status}`}>{TASK_STATUS_LABELS[task.status]}</span>
       </div>
-      <ClippedText text={task.description} maxLines={4} maxChars={600} className="task-description" />
+      <ClippedMarkdown text={task.description} maxLines={4} maxChars={600} className="task-description" />
       <dl className="task-facts">
         <dt>Posted by</dt>
         <dd>
@@ -66,7 +66,7 @@ const TaskCard = memo(function TaskCard({
                   jump
                 </button>
               </div>
-              <ClippedText text={submission.result} maxLines={4} maxChars={700} className="submission-text" />
+              <ClippedMarkdown text={submission.result} maxLines={4} maxChars={700} className="submission-text" />
             </li>
           ))}
         </ul>

@@ -4,6 +4,7 @@ import { formatBytes, formatClock } from '../format'
 import type { ChatRecord, FileRecord, StepRecord, TaskRecord, ToolRecord } from '../types'
 import { ClippedText } from './ClippedText'
 import { CommandBlock } from './CommandBlock'
+import { ClippedMarkdown } from './Markdown'
 import { AlertIcon, BoardIcon, ChatIcon, FileReadIcon, FileWriteIcon, ToolIcon } from './Icons'
 
 const PROSE_LINES = 24
@@ -14,7 +15,7 @@ const CONTENT_LINES = 16
 const CONTENT_CHARS = 3000
 
 function Say({ text }: { text: string }) {
-  return <ClippedText text={text} maxLines={PROSE_LINES} maxChars={PROSE_CHARS} className="say" />
+  return <ClippedMarkdown text={text} maxLines={PROSE_LINES} maxChars={PROSE_CHARS} className="say" />
 }
 
 function ChatPost({ record }: { record: ChatRecord }) {
@@ -24,7 +25,7 @@ function ChatPost({ record }: { record: ChatRecord }) {
         <ChatIcon size={14} />
         <span>posted to chat</span>
       </div>
-      <ClippedText text={record.text} maxLines={QUOTE_LINES} maxChars={QUOTE_CHARS} className="chat-post-text" />
+      <ClippedMarkdown text={record.text} maxLines={QUOTE_LINES} maxChars={QUOTE_CHARS} className="chat-post-text" />
     </div>
   )
 }
@@ -71,7 +72,7 @@ function TaskLine({ record }: { record: TaskRecord }) {
         )}
       </div>
       {!record.ok && <div className="one-liner-detail">{record.outcome}</div>}
-      {body && <ClippedText text={body} maxLines={3} maxChars={600} className="one-liner-body" />}
+      {body && <ClippedMarkdown text={body} maxLines={3} maxChars={600} className="one-liner-body" />}
     </div>
   )
 }

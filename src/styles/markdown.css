@@ -1,0 +1,80 @@
+.markdown {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.md-list {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+ul.md-list {
+  list-style-type: disc;
+}
+
+ol.md-list {
+  list-style-type: decimal;
+}
+
+.md-list ul.md-list {
+  list-style-type: circle;
+}
+
+.md-list li + li {
+  margin-top: 0.15em;
+}
+
+.md-list li::marker {
+  color: var(--muted);
+}
+
+.md-heading {
+  font-weight: 650;
+}
+
+.md-heading-1,
+.md-heading-2 {
+  font-size: 1.08em;
+}
+
+.markdown a {
+  color: var(--focus);
+  text-underline-offset: 2px;
+}
+
+.md-code-inline {
+  padding: 0 0.3em;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--surface-3);
+  color: var(--text);
+  font-size: 0.88em;
+  white-space: pre-wrap;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.md-code-block {
+  max-width: 100%;
+  margin: 0;
+  padding: 6px 9px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+}
+
+.md-code-block code {
+  font-size: inherit;
+}
+
+.markdown > * + *,
+.markdown li > .md-list {
+  margin-top: 0.4em;
+}

@@ -3,7 +3,7 @@ import { useStickToBottom } from '../hooks/useStickToBottom'
 import { formatClock, formatNumber } from '../format'
 import type { ChatMessage, Manifest } from '../types'
 import { accentVar } from '../state/village'
-import { ClippedText } from './ClippedText'
+import { ClippedMarkdown } from './Markdown'
 
 interface ChatTabProps {
   manifest: Manifest
@@ -41,7 +41,7 @@ const ChatEntry = memo(function ChatEntry({
           {formatClock(message.ts)}
         </span>
       </button>
-      <ClippedText text={message.content} maxLines={9} maxChars={1400} className="chat-text" />
+      <ClippedMarkdown text={message.content} maxLines={9} maxChars={1400} className="chat-text" />
     </li>
   )
 })

@@ -8,6 +8,8 @@ The viewer shows the village at one moment of the run, the playhead, and lets yo
 - a sidebar with the group chat, the task board rebuilt for the playhead, and run details: villagers, limits, sessions, totals and highlights;
 - a transport bar with play and pause, step and turn navigation, speed, the current position and a timeline of every turn, coloured by villager and marked where commands or turns failed and where highlights are.
 
+A villager's own prose (what it said, its chat posts, task descriptions and submitted results) is rendered as a small, conservative subset of Markdown: paragraphs and line breaks, bold, italic with `*`, inline code, fenced code blocks, bullet and numbered lists with one level of nesting, headings and `http`/`https` links; underscores, raw HTML, tables and blockquotes stay literal, an unclosed `**` or backtick is shown as written, and an unclosed code fence runs to the end of the message. Commands, their output, written file contents, tool arguments, the run goal and highlights are always shown literally.
+
 Keyboard: Space plays or pauses, Left and Right move one step, Shift+Left and Shift+Right move one turn, Escape restores an expanded panel.
 
 ## Running it

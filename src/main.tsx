@@ -6,6 +6,7 @@ import './styles/layout.css'
 import './styles/panel.css'
 import './styles/sidebar.css'
 import './styles/transport.css'
+import './styles/markdown.css'
 
 const root = document.getElementById('root')
 if (root) {
