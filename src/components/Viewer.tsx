@@ -142,6 +142,7 @@ export function Viewer({ manifest, runs, initialStep, theme, onTheme, onRun }: V
   usePlayback({
     playing,
     ready: currentRecords !== undefined,
+    step,
     delayMs: dwellMs(currentRecord, speed),
     atEnd: step >= last,
     advance,

@@ -5,7 +5,9 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   test: {
-    environment: 'node',
-    include: ['src/**/*.test.ts'],
+    projects: [
+      { extends: true, test: { name: 'logic', environment: 'node', include: ['src/state/**/*.test.ts'] } },
+      { extends: true, test: { name: 'hooks', environment: 'happy-dom', include: ['src/hooks/**/*.test.ts'] } },
+    ],
   },
 })
